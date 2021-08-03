@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.headingStyle{
+    background-color: purple;
+    color: white;
+    padding: 15px;
+    margin: 8px;
+    text-align: center;
+    width: 500px;
+    
+     
+}
+
+.carddes{
+    text-align: center;
+    margin-bottom: 5px;
+    color:purple;
+
+}
+.carddate{
+    font-weight: bold;
+    text-align: center;
+    color:purple;
+}
