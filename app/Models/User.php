@@ -31,6 +31,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public $timestamps=flase;
 
     /**
      * The attributes that should be cast to native types.
