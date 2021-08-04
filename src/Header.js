@@ -11,7 +11,7 @@ export default function Header() {
           <Link to="/add">Add Product</Link>
           <Link to="/edit">Edit Product</Link>
           <Link to="/login">login</Link>
-          <Link to="/reister">Register</Link>
+          <Link to="/register">Register</Link>
         </Nav>
       </Navbar>
     </div>
