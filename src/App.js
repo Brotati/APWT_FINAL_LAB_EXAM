@@ -16,7 +16,7 @@ function App(){
           return <div className="App">
              <BrowserRouter>     
              <Header />
-            <h1 > Onling Shooping</h1>
+            <h1 > Onling Shopping</h1>
             <Route path="/add">
              <AddProduct />
             </Route>
