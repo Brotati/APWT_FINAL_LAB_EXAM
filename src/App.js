@@ -4,24 +4,24 @@ import './App.css';
 import {BrowserRouter,Route} from 'react-router-dom'
 
 
-import Header from './Header'
+import Protected from './Protected'
 import Login from './Login'
 import Reg from './Reg'
-import EditProduct from './EditProduct'
+import UpdateProduct from './UpdateProduct'
 import AddProduct  from './AddProduct'
+
 
  
 function App(){
     
           return <div className="App">
              <BrowserRouter>     
-             <Header />
-            <h1 > Onling Shopping</h1>
+          
             <Route path="/add">
-             <AddProduct />
+             <Protected Cmp={AddProduct} />
             </Route>
-            <Route path="/edit">
-             <EditProduct />
+            <Route path="/update">
+             <Protected Cmp={UpdateProduct} />
             </Route>
             <Route path="/login">
              <Login />
