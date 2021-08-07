@@ -2,23 +2,24 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Header from "./Header";
-//import FloatingLabel from "react-bootstrap-floating-label";
+
 
 export default function Reg() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  const [errors,setErrors] = useState("");
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
-      history.push("./add");
+      history.push("/login")
     }
   }, []);
   async function signUp() {
     
 
     let item = { name, password, email };
-    console.log(item);
+    setErrors('Registration Successful')
     let result = await fetch("http://localhost:8000/api/register", {
       method: "POST",
       headers: {
@@ -29,15 +30,15 @@ export default function Reg() {
       body: JSON.stringify(item),
     });
     result = await result.json();
-    console.warn("result", result);
     localStorage.setItem("user-info", JSON.stringify(result));
-    history.push("/add");
+    history.push("/login")
   }
   return (
     <>
       <Header />
       <div className="col-sm-6 offset-sm-3">
-        <h1>User SignUp</h1>
+        <h1>User Signup</h1>
+        <h2 style={{ color: "Green" }}>{errors}</h2>
         <input
           type="text"
           value={name}

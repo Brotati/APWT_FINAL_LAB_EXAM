@@ -19,10 +19,11 @@ export default function Header() {
             <>
               <Link to="/add">Add Product</Link>
               <Link to="/update">Update Product</Link>
+              
             </>
           ) : (
             <>
-              <Link to="/login">login</Link>
+              <Link to="/login">Login</Link>
               <Link to="/register">Register</Link>
             </>
           )}
