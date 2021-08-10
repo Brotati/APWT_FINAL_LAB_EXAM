@@ -16,7 +16,6 @@ function App(){
     
           return <div className="App">
              <BrowserRouter>     
-          
             <Route path="/add">
              <Protected Cmp={AddProduct} />
             </Route>
@@ -24,7 +23,7 @@ function App(){
              <Protected Cmp={UpdateProduct} />
             </Route>
             <Route path="/login">
-             <Login />
+            <Login />
             </Route>
             <Route path="/register">
              <Reg />

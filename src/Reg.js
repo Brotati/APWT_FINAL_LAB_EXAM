@@ -13,6 +13,7 @@ export default function Reg() {
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       history.push("/login")
+     
     }
   }, []);
   async function signUp() {
