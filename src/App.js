@@ -9,7 +9,8 @@ import Reg from "./Reg";
 import UpdateProduct from "./UpdateProduct";
 import AddProduct from "./AddProduct";
 import ProductList from "./ProductList";
-import DeleteProduct from "./DeleteProduct";
+import SearchProduct from "./SearchProduct";
+
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
           <Route path="/update/:id">
             <Protected Cmp={UpdateProduct} />
           </Route>
-          <Route path="/delete">
-            <Protected Cmp={DeleteProduct} />
+          <Route path="/search">
+            <Protected Cmp={SearchProduct} />
           </Route>
           <Route path="/login">
             <Login />

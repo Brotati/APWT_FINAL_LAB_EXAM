@@ -7,21 +7,20 @@ export default function AddProduct() {
   const [file, setFile] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
-  const [errors,setErrors] = useState("");
+  const [errors, setErrors] = useState("");
 
-  
-     async function AddProduct(){
-      const formdata= new FormData ();
-      setErrors('Data has been saved')
-      formdata.append('file',file)
-      formdata.append('name',name)
-      formdata.append('price',price)
-      formdata.append('description',description)
-      let result = await fetch("http://localhost:8000/api/addProduct",{
-         method:'POST',
-         body: formdata
-      });
-      
+  async function AddProduct() {
+    const formdata = new FormData();
+    setErrors("Data has been saved");
+    formdata.append("file", file);
+    formdata.append("name", name);
+    formdata.append("price", price);
+    formdata.append("description", description);
+    let result = await fetch("http://localhost:8000/api/addProduct", {
+      method: "POST",
+      body: formdata,
+    });
+    result = await result.json();
   }
 
   return (
@@ -29,7 +28,7 @@ export default function AddProduct() {
       <Header />
 
       <div className="col-sm-6 offset-sm-3">
-      <h2 style={{ color: "Green" }}>{errors}</h2>
+        <h2 style={{ color: "Green" }}>{errors}</h2>
         <br />
         <Form.Control
           size="sm"

@@ -5,10 +5,12 @@ import {Link} from 'react-router-dom'
 
 export default function ProductList() {
   const [data, setData] = useState([]);
+  const [errors, setErrors] = useState("");
   useEffect( () => {
        getData()
   }, []);
   async function deleteproduct(id){
+    setErrors("Product deleted!");
      let result = await fetch("http://localhost:8000/api/delete/"+id,{
        method: 'DELETE'
      });
@@ -27,6 +29,7 @@ export default function ProductList() {
       <Hedar />
       <div className="col-sm-8 offset-sm-2">
       <h1>ProductList</h1>
+      <h2 style={{ color: "Green" }}>{errors}</h2>
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
