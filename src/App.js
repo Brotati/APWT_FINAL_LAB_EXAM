@@ -31,7 +31,7 @@ function App() {
           <Route path="/register">
             <Reg />
           </Route>
-          <Route path="/">
+          <Route path="/ProductList">
             <Protected Cmp={ProductList} />
           </Route>
         </Switch>
