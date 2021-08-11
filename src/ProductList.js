@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Hedar from "./Header";
 import { Table } from "react-bootstrap";
+import {Link} from 'react-router-dom'
 
 export default function ProductList() {
   const [data, setData] = useState([]);
@@ -45,7 +46,7 @@ export default function ProductList() {
               <td>{item.description}</td>
               <td>{item.price}</td>
               <td><img style={{ width:"100px" }} src={"http://localhost:8000/"+item.file_path} /></td> 
-              <td><span className="edit">Edit</span></td>
+              <td><Link to={"update/"+item.id}><span className="update">Update</span></Link></td>
               <td><span onClick={()=>{deleteproduct(item.id)}} className="delete">Delete</span></td> 
             </tr>
           ))}
